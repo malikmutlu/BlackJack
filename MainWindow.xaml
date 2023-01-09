@@ -1,0 +1,51 @@
+﻿<Window x:Class="BlackJack.MainWindow" MinHeight="550" MinWidth="900"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BlackJack"
+        mc:Ignorable="d"
+        Title="BlackJack" Height="550" Width="900" Loaded="Window_Loaded">
+    <Window.Background>
+        <ImageBrush ImageSource="img/table.jpg" Stretch="Fill"/>
+    </Window.Background>
+    <Grid>
+        <StackPanel Width="350" HorizontalAlignment="Left">
+            <Label Content="SPELER" FontSize="30" FontWeight="ExtraBold" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBox x:Name="TxtSpelerTotaal" Text="00" Height="65" Background="Transparent" HorizontalContentAlignment="Center" Foreground="White" BorderThickness="0" Width="65" FontSize="45"/>
+            <WrapPanel Name="SpelerWrap" Height="150" Margin="15,15,15,15" ItemHeight="110" ItemWidth="60"/>
+            <WrapPanel Margin="15,15,15,15" Height="175">
+                <TextBox x:Name="TxtInzet" Text="0"  VerticalContentAlignment="Center" HorizontalContentAlignment="Center" FontWeight="SemiBold" IsReadOnly="True" Background="Transparent" Foreground="White" Margin="5,5,5,5" BorderThickness="5" BorderBrush="Black"  Width="65" Height="65" FontSize="30"/>
+                <Button x:Name="BtnPlus" Content="+" FontSize="35" Width="65" Height="65" Background="White" Foreground="Black" BorderThickness="5" BorderBrush="Black" Margin="35,5,5,5" Click="BtnPlus_Click"/>
+                <Button  x:Name="BtnMin" Content="-" FontSize="35" Width="65" Height="65" Background="White" Foreground="Black" BorderThickness="5" BorderBrush="Black" Margin="5,5,5,5" Click="BtnMin_Click"/>
+                <TextBox x:Name="TxtKapitaal" Background="Transparent"  FontWeight="SemiBold" Text="100" VerticalContentAlignment="Center" HorizontalContentAlignment="Center" IsReadOnly="True" Foreground="White" Margin="5,5,5,5" BorderThickness="5" BorderBrush="Black"  Width="65" Height="65" FontSize="30"/>
+                <Label Content="Kapitaal" FontSize="30" VerticalContentAlignment="Center" Foreground="White" FontWeight="ExtraBold" Margin="40,0,0,0"/>
+            </WrapPanel>
+        </StackPanel>
+        
+        <StackPanel Width="200" HorizontalAlignment="Center">            
+            <Label Name="LblVerloren" Content="" HorizontalContentAlignment="Center" FontWeight="ExtraBold" FontSize="30"/>
+            <Button x:Name="BtnDeel" Content="Deel" Height="40" FontSize="20" Margin="0,28,0,0" Background="Black" Foreground="White" FontWeight="ExtraBold" BorderThickness="5" BorderBrush="White" Click="BtnDeel_Click" />
+            <Button x:Name="BtnHit" Content="Hit" Height="40" FontSize="20" Margin="0,30,0,0" Background="Black" Foreground="White" FontWeight="ExtraBold" BorderThickness="5" BorderBrush="White" Click="BtnHit_Click"/>
+            <Button x:Name="BtnStand" Content="Stand" Height="40" FontSize="20" Margin="0,30,0,0" Background="Black" Foreground="White" FontWeight="ExtraBold" BorderThickness="5" BorderBrush="White" Click="BtnStand_Click"/>
+            <Button x:Name="BtnNieuwSpel" Content="Opnieuw" FontSize="20" Height="40" Margin="0,30,0,0" Background="Black" Foreground="White" FontWeight="ExtraBold" BorderThickness="5" BorderBrush="White" Click="BtnNieuwSpel_Click"/>
+            <Button Name="BtnRestart" Content="Nieuwe Spel" FontSize="20" Height="40" Margin="0,30,0,0" Background="Black" Foreground="White" FontWeight="ExtraBold" BorderThickness="5" BorderBrush="White" Click="BtnRestart_Click"/>
+        </StackPanel>
+        
+        <StackPanel Width="350" HorizontalAlignment="Right">
+            <Label Content="COMPUTER" FontSize="30" FontWeight="ExtraBold" Foreground="White" HorizontalAlignment="Center"/>
+            <TextBox x:Name="TxtComputerTotaal" Text="00" Height="65" HorizontalContentAlignment="Center" Background="Transparent" Foreground="White" BorderThickness="0" Width="65" FontSize="45"/>
+            <WrapPanel Name="ComputerWrap" Height="150" Margin="15,15,15,15" ItemHeight="110" ItemWidth="60"/>
+            <WrapPanel Name="WPanelDeck" Height="100" Width="100"/>
+            <Label Name="LblDeck" Width="35" Height="35" Foreground="White"/>
+        </StackPanel>
+        <WrapPanel Height="30" VerticalAlignment="Bottom" Background="Black">
+            <Label Name="LblTime" FontSize="15"  Foreground="White" Width="150" Height="30"/>
+            <Label Name="LblStart" FontSize="15"   Width="150" Height="30" Margin="5,0,0,0"/>
+            <Label Name="LblLastResult" FontSize="15" Foreground="White"  Width="350" Height="30" Margin="5,0,0,0"/>
+            <Button Content="Statistieken" FontSize="15" Width="150" Background="White" Click="SButton_Click"/>
+
+        </WrapPanel>
+
+    </Grid>
+</Window>
